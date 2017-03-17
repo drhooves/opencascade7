@@ -1,0 +1,12 @@
+diff -aur occt-V7_1_0/adm/cmake/occt_macros.cmake occt-V7_1_0.new/adm/cmake/occt_macros.cmake
+--- occt-V7_1_0/adm/cmake/occt_macros.cmake	2016-11-25 11:50:18.000000000 +0100
++++ occt-V7_1_0.new/adm/cmake/occt_macros.cmake	2017-03-17 23:32:07.679628209 +0100
+@@ -558,7 +558,7 @@
+   "cmake_policy(PUSH)
+   cmake_policy(SET CMP0007 NEW)
+   string (TOLOWER \"\${CMAKE_INSTALL_CONFIG_NAME}\" CMAKE_INSTALL_CONFIG_NAME_LOWERCASE)
+-  file (GLOB ALL_OCCT_TARGET_FILES \"${INSTALL_DIR}/${INSTALL_DIR_CMAKE}/OpenCASCADE*Targets-\${CMAKE_INSTALL_CONFIG_NAME_LOWERCASE}.cmake\")
++  file (GLOB ALL_OCCT_TARGET_FILES \"\$ENV{DESTDIR}${INSTALL_DIR}/${INSTALL_DIR_CMAKE}/OpenCASCADE*Targets-\${CMAKE_INSTALL_CONFIG_NAME_LOWERCASE}.cmake\")
+   foreach(TARGET_FILENAME \${ALL_OCCT_TARGET_FILES})
+     file (STRINGS \"\${TARGET_FILENAME}\" TARGET_FILE_CONTENT)
+     file (REMOVE \"\${TARGET_FILENAME}\")

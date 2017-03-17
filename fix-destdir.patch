@@ -1,0 +1,12 @@
+diff -aur opencascade-7.1.0/CMakeLists.txt opencascade-7.1.0.new/CMakeLists.txt
+--- opencascade-7.1.0/CMakeLists.txt	2016-11-25 10:52:00.000000000 +0100
++++ opencascade-7.1.0.new/CMakeLists.txt	2017-01-31 23:04:33.308026137 +0100
+@@ -906,7 +906,7 @@
+ endforeach()
+ # install OpenCASCADE config file with compile definitions and C/C++ flags ONLY for current configuration
+ install (CODE "string (TOLOWER \"\${CMAKE_INSTALL_CONFIG_NAME}\" CMAKE_INSTALL_CONFIG_NAME_LOWER)")
+-install (CODE "configure_file(\"${CMAKE_BINARY_DIR}/OpenCASCADECompileDefinitionsAndFlags-\${CMAKE_INSTALL_CONFIG_NAME_LOWER}.cmake\" \"${INSTALL_DIR}/${INSTALL_DIR_CMAKE}/OpenCASCADECompileDefinitionsAndFlags-\${CMAKE_INSTALL_CONFIG_NAME_LOWER}.cmake\" COPYONLY)")
++install (CODE "configure_file(\"${CMAKE_BINARY_DIR}/OpenCASCADECompileDefinitionsAndFlags-\${CMAKE_INSTALL_CONFIG_NAME_LOWER}.cmake\" \"\$ENV{DESTDIR}${INSTALL_DIR}/${INSTALL_DIR_CMAKE}/OpenCASCADECompileDefinitionsAndFlags-\${CMAKE_INSTALL_CONFIG_NAME_LOWER}.cmake\" COPYONLY)")
+ 
+ foreach (OCCT_MODULE ${OCCT_MODULES})
+   if (BUILD_MODULE_${OCCT_MODULE})

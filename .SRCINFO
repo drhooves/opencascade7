@@ -1,0 +1,42 @@
+pkgbase = opencascade7
+	pkgdesc = 3D modeling & numerical simulation SDK
+	pkgver = 7.1.0
+	pkgrel = 1
+	url = http://www.opencascade.org
+	arch = i686
+	arch = x86_64
+	license = custom
+	makedepends = cmake
+	makedepends = flex
+	makedepends = bison
+	makedepends = doxygen
+	makedepends = graphviz
+	makedepends = qt5-webkit
+	makedepends = gl2ps
+	makedepends = freeimage
+	makedepends = tk
+	makedepends = glu
+	makedepends = libxmu
+	makedepends = vtk
+	makedepends = mesa
+	makedepends = intel-tbb
+	source = opencascade-7.1.0.tgz::http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_1_0;sf=tgz
+	source = fix-destdir.patch
+	source = fix-absolute-path.patch
+	md5sums = 12ff27bba1199a928aa6b2dfedbdde43
+	md5sums = 1efcd714f9c1765b2918e412353dc92d
+	md5sums = 13dec13d8423bbb399452a61d66ec78b
+
+pkgname = opencascade7
+	depends = gl2ps
+	depends = freeimage
+	depends = tk
+	depends = glu
+	depends = libxmu
+	depends = vtk
+	depends = mesa
+	depends = intel-tbb
+
+pkgname = opencascade7-docs
+	pkgdesc = 3D modeling & numerical simulation SDK - documentation
+
